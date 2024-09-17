@@ -2,3 +2,13 @@
   width: 90%;
   margin: auto;
 }
+
+h2 {
+  margin-top: 4vh;
+  padding-bottom: 2px;
+  border-bottom: solid white 1px;
+}
+
+.btnHome {
+  margin-block: 2vh;
+}

@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 
-export const User = () => {
+export const Entries = () => {
   return (
     <>
-      <Outlet/>
-    </> 
+      <Outlet />
+    </>
   );
 };

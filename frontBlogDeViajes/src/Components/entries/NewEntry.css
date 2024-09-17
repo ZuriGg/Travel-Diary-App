@@ -1,0 +1,17 @@
+.formNewEntry{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+img{
+    max-width: 30%;
+}
+
+.titleNewEntry{
+    margin-block: 8vh;
+    color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

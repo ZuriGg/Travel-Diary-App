@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 
 function Register() {
     const [email, setEmail] = useState("");
@@ -48,7 +49,7 @@ function Register() {
                     <input
                         value={email}
                         onChange={(e) =>
-                            setEmail({ ...email, email: e.target.value })
+                            setEmail(e.target.value)
                         }
                     />
                 </label>
@@ -59,10 +60,7 @@ function Register() {
                         type="password"
                         value={password}
                         onChange={(e) =>
-                            setPassword({
-                                ...password,
-                                password: e.target.value,
-                            })
+                            setPassword(e.target.value)
                         }
                     />
                 </label>
