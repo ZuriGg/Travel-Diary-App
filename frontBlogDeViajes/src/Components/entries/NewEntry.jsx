@@ -2,14 +2,14 @@ import { useUser } from "../../UserContext.jsx";
 import { useState } from "react";
 import "./NewEntry.css";
 
-export const NewEntry = ({ setImageEntry }) => {
+export const NewEntry = ({ file, setFile }) => {
   const [user] = useUser();
-  const [file, setFile] = useState(null);
   const [title, setTitle] = useState("");
   const [place, setPlace] = useState("");
   const [description, setDescription] = useState("");
   const [preview, setPreview] = useState(null);
   const [success, setSuccess] = useState(null);
+  //const [error, setError] = useState(null); // Manejo de errores
 
   const handleFile = (e) => {
     setFile(e.target.files[0]);
@@ -19,8 +19,6 @@ export const NewEntry = ({ setImageEntry }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Subiendo:", file);
-
-    setImageEntry(file);
 
     const fd = new FormData();
     fd.append("image", file);

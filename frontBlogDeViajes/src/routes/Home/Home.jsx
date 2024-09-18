@@ -1,10 +1,10 @@
-import { useState } from "react";
+//import { useState } from "react";
 import { useEntries } from "../../hooks/api.js";
 import "./Home.css";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function Home({ imageEntry }) {
+function Home({ file }) {
   const data = useEntries();
 
   const navigate = useNavigate();
@@ -33,7 +33,7 @@ function Home({ imageEntry }) {
               <p>{entrie.createdAt}</p>
               <img
                 src={
-                  imageEntry
+                  file
                     ? `https://travel-diary-api.anxoso.com/uploads/${entrie.photos[0]?.name}`
                     : "/assets/img/HAB.jpg"
                 }

@@ -13,20 +13,23 @@ import { NewEntry } from "./Components/entries/NewEntry.jsx";
 import { useState } from "react";
 
 function App() {
-  const [imageEntry, setImageEntry] = useState(null);
+  const [file, setFile] = useState(null);
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home imageEntry={imageEntry} />} />
+          <Route index element={<Home file={file} />} />
           <Route path="users" element={<User />}>
             <Route path="login" element={<Login />}></Route>
             <Route path="register" element={<Register />}></Route>
             <Route path="profile" element={<Profile />}></Route>
           </Route>
           <Route path="entries" element={<Entries />}>
-            <Route index element={<NewEntry imageEntry={imageEntry} />}></Route>
+            <Route
+              index
+              element={<NewEntry file={file} setFile={setFile} />}
+            ></Route>
             <Route path=":id" element={"dcvevc"}></Route>
           </Route>
         </Route>
