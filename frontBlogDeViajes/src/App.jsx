@@ -13,34 +13,26 @@ import { NewEntry } from "./Components/entries/NewEntry.jsx";
 import { useState } from "react";
 
 function App() {
-    const [imageEntry, setImageEntry] = useState(null);
+  const [imageEntry, setImageEntry] = useState(null);
 
-    return (
-        <>
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Home imageEntry={imageEntry} />} />
-                    <Route path="users" element={<User />}>
-                        <Route path="login" element={<Login />}></Route>
-                        <Route path="register" element={<Register />}></Route>
-                        <Route path="profile" element={<Profile />}></Route>
-                    </Route>
-                    <Route path="entries" element={<Entries />}>
-                        <Route
-                            index
-                            element={
-                                <NewEntry
-                                    imageEntry={imageEntry}
-                                    setImageEntry={setImageEntry}
-                                />
-                            }
-                        ></Route>
-                        <Route path=":id" element={"dcvevc"}></Route>
-                    </Route>
-                </Route>
-            </Routes>
-        </>
-    );
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home imageEntry={imageEntry} />} />
+          <Route path="users" element={<User />}>
+            <Route path="login" element={<Login />}></Route>
+            <Route path="register" element={<Register />}></Route>
+            <Route path="profile" element={<Profile />}></Route>
+          </Route>
+          <Route path="entries" element={<Entries />}>
+            <Route index element={<NewEntry imageEntry={imageEntry} />}></Route>
+            <Route path=":id" element={"dcvevc"}></Route>
+          </Route>
+        </Route>
+      </Routes>
+    </>
+  );
 }
 
 export default App;

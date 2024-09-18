@@ -33,7 +33,7 @@ function Login() {
     <div id="login" className="page">
       <h1>Iniciar sesión</h1>
       <form onSubmit={handleSubmit}>
-        <label>
+        <label htmlFor="email">
           <span>Usuario:</span>
           <input
             name="email"

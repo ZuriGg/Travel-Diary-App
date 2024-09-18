@@ -1,10 +1,9 @@
-import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import "./Layout.css";
 import { useUser } from "../../UserContext.jsx";
+import "./Layout.css";
 
 function Layout() {
-  const [user] = useUser();
+  const [user] = useUser(); //importamos contexto
   return (
     <>
       <header id="header">
