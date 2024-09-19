@@ -18,7 +18,7 @@ export const NewEntry = ({ file, setFile }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Subiendo:", file);
+    console.log("Subido:", file);
 
     const fd = new FormData();
     fd.append("image", file);

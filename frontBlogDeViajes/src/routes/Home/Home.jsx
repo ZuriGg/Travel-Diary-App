@@ -1,12 +1,11 @@
 //import { useState } from "react";
-import { useEntries } from "../../hooks/api.js";
+import Entries from "../../Components/entries/Entries.jsx";
+
 import "./Home.css";
 //import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-function Home({ file }) {
-  const data = useEntries();
-
+function Home() {
   const navigate = useNavigate();
   return (
     <>
@@ -18,29 +17,14 @@ function Home({ file }) {
         className="btnHome"
         onClick={(e) => {
           e.preventDefault();
-          navigate("/entries");
+          navigate("/newEntry");
         }}
       >
         Registrar entrada bb
       </button>
 
       <div id="home">
-        {data?.data.map((entrie) => (
-          <li key={entrie.id}>
-            <div className="entrada">
-              <h3>{entrie.title}</h3>
-              <p>{entrie.place}</p>
-              <p>{entrie.createdAt}</p>
-              <img
-                src={
-                  file
-                    ? `https://travel-diary-api.anxoso.com/uploads/${entrie.photos[0]?.name}`
-                    : "/assets/img/HAB.jpg"
-                }
-              />
-            </div>
-          </li>
-        ))}
+        <Entries />
       </div>
     </>
   );
